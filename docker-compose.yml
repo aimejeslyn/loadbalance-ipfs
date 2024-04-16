@@ -1,5 +1,6 @@
 services:
   loadbalancer-ipfs:
+    container_name: loadbalancer-ipfs
     image: nginx:stable-alpine
     ports:
       - "80:80"
