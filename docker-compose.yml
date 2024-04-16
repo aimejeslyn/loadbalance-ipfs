@@ -1,0 +1,7 @@
+services:
+  loadbalancer-ipfs:
+    image: nginx:stable-alpine
+    ports:
+      - "80:80"
+    volumes:
+      - /root/loadbalance-ipfs:/etc/nginx/conf.d
