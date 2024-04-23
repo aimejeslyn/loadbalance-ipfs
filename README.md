@@ -9,13 +9,13 @@ The Nginx configuration defines two upstream server groups:
 
 #### IPFS Upstream Servers (`upstream ipfs`):
 
-- Server 1: `149.28.141.210:5001`
-- Server 2: `207.148.119.40:5001`
+- Server 1: `$IP:5001`
+- Server 2: `$IP:5001`
 
 #### Cluster Upstream Servers (`upstream cluster`):
 
-- Server 1: `207.148.119.40:9094`
-- Server 2: `149.28.141.210:9094`
+- Server 1: `$IP:9094`
+- Server 2: `$IP:9094`
 
 ### Nginx Server Block Configuration
 - Define proxy locations for `/ipfs/` and `/cluster/` paths:
