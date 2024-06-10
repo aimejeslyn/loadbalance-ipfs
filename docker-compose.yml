@@ -7,3 +7,5 @@ services:
     volumes:
       - /root/loadbalance-ipfs:/etc/nginx/conf.d
       - /root/ssl:/etc/nginx/ssl
+      - /root/.htpasswd:/etc/nginx/.htpasswd
+

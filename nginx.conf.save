@@ -1,21 +1,22 @@
 upstream ipfs {
     server 20.205.136.98:8080;
-    server 20.192.27.150:8080;
+    server 20.40.43.20:8080;
 }
 upstream ipfswrite {
     server 20.205.136.98:5001;
-    server 20.192.27.150:5001;
+    server 20.40.43.20:5001;
 
 upstream cluster {
     server 20.205.136.98:9094;
-    server 20.192.27.150:9094;
+    server 20.40.43.20:9094;
 }
 
 server {
     listen 80;
     server_name localhost;
-    #satisty all;
-    #deny all;
+    satisty all;
+    allow 74.226.196.99;
+    deny all;
 
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
     add_header Content-Security-Policy "default-src 'self';" always;
@@ -35,10 +36,6 @@ server {
        
         auth_basic "Administrator’s Area";
         auth_basic_user_file /etc/nginx/.htpasswd;
-        
-        root /var/www/admin;
-        index index.html index.htm;
-
     }
         
     location /cluster/ {
